@@ -9,9 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "ccxt": "^1.16.77",
-    "lodash": "^4.17.10",
-    "redis": "^2.8.0"
+    
   }
 }
