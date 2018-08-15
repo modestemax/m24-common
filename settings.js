@@ -10,15 +10,25 @@ module.exports = {
             cancelBidAfterSecond: 30,
         },
         "emaH1H4": {
+            timeInForce: 'GTC',
             takeProfit: null,
             trailingStop: 1,
             isActive: true,
+        },
+        "bbemaH1": {
+            timeInForce: 'FOK',
+            takeProfit: 15,
+            stopLoss: null,
+            trailingStop: null,
+            isActive: true,
+            bidMarket: true
         }
     }),
 
     defaultStrategyOptions: {
         isActive: false,
         timeInForce: 'FOK',
+        bidMarket: false,
         takeProfit: 1,
         stopLoss: -2,
         trailingStop: 3,
