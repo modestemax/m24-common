@@ -1,5 +1,5 @@
 module.exports = {
-    MAX_TRADE_COUNT_PER_STRATEGY: 5,
+    MAX_TRADE_COUNT_PER_STRATEGY: 3,
 
     strategies: filterActive({
         "testEma01": {
@@ -8,6 +8,7 @@ module.exports = {
             stopLoss: -2,
             trailingstop: 0,
             cancelBidAfterSecond: 30,
+            isActive: process.env.NODE_ENV != 'production',
         },
         "emaH1H4": {
             timeInForce: 'GTC',
@@ -17,9 +18,9 @@ module.exports = {
         },
         "bbemaH1": {
             timeInForce: 'FOK',
-            takeProfit: 15,
-            stopLoss: null,
-            trailingStop: null,
+            takeProfit: 5,
+            stopLoss: -3,
+            trailingStop: 2,
             isActive: true,
             bidMarket: true
         }
@@ -32,15 +33,8 @@ module.exports = {
         takeProfit: 1,
         stopLoss: -2,
         trailingStop: 3,
-        cancelBidAfterSecond: 60 * 60//1hour
-    },
-    timeframesIntervals: {
-        1: 60e3,
-        5: 5 * 60e3,
-        15: 15 * 60e3,
-        60: 60 * 60e3,
-        240: 240 * 60e3,
-        [60 * 24]: 60 * 24 * 60e3,
+        cancelBidAfterSecond: 60 * 60,//1hour,
+        ownerTelegramChatId: "475514014",//"@modestemax";
     },
 };
 
